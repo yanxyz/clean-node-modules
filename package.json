@@ -1,0 +1,15 @@
+{
+  "name": "clean-node-modules",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Ivan Yan",
+  "license": "MIT",
+  "private": true,
+  "repository": "yanxyz/clean-node-modules",
+  "bin": {
+    "cnm": "lib/cli.js"
+  },
+  "dependencies": {
+    "fs-extra": "^4.0.2"
+  }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+    }
+    textarea {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <textarea id="input" placeholder="input" spellcheck="false"></textarea>
+  <textarea id="output" placeholder="output" spellcheck="false"></textarea>
+
+  <script>
+    document.getElementById('input').onchange = function () {
+      document.getElementById('output').value = split(this.value.trim())
+    }
+
+    function split(input) {
+      const set = new Set
+      input.split('\n').forEach(x => {
+        x = x.trim().replace(/\\/g, '/')
+        if (x) set.add(`'${x}'`)
+      })
+      return Array.from(set).join(',\n') + ','
+    }
+  </script>
+</body>
+</html>
